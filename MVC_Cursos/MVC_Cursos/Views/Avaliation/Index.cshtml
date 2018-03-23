@@ -1,0 +1,21 @@
+﻿@model IEnumerable<MVC_Cursos.Models.Avaliation>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>Avaliations</h1>
+    <table>
+        @foreach (var aval in Model)
+        {
+        <tr>
+            <td>@aval.id</td>
+            <td>@aval.idCourse</td>
+            <td>@aval.idTrainee</td>
+        </tr>
+        }
+
+    </table>
+</body>
+</html>

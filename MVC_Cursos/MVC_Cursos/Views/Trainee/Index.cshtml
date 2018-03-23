@@ -1,0 +1,19 @@
+﻿@model IEnumerable<MVC_Cursos.Models.Trainee>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>Trainees</h1>
+    <table>
+        @foreach (var trainees in Model)
+        {
+            <tr>
+                <td>@trainees.id</td>
+                <td>@trainees.Name</td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
