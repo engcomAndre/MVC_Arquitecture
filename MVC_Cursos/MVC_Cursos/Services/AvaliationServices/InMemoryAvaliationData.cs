@@ -29,5 +29,10 @@ namespace MVC_Cursos.Services.AvaliationServices
         {
             return _avaliations.OrderBy(aval => aval.id);
         }
+
+        public Avaliation GetAvaliationsById(int id)
+        {
+            return _avaliations.FirstOrDefault(aval => aval.id == id);
+        }
     }
 }

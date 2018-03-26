@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MVC_Cursos.Models.Trainee>
+﻿@model MVC_Cursos.ViewModels.TraineeViewModel.TraineeIndexViewModel
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -7,13 +7,17 @@
 <body>
     <h1>Trainees</h1>
     <table>
-        @foreach (var trainees in Model)
+        @foreach (var trainees in Model.Trainees)
         {
             <tr>
                 <td>@trainees.id</td>
                 <td>@trainees.Name</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@trainees.id">MORE</a>
+                </td>
             </tr>
         }
     </table>
+    <a asp-action="Create" asp-controller="Trainee">CREATE</a>
 </body>
 </html>

@@ -7,6 +7,7 @@ namespace MVC_Cursos.Models
 {
     public class Course
     {
+        public TecnologyType TecnologyCourse{ get; set; }
         public int id { get; set; }
         public String Title{ get; set; }
 

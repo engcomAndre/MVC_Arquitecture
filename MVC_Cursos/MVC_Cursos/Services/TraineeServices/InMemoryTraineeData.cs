@@ -22,12 +22,19 @@ namespace MVC_Cursos.Services
             };
         }
 
+        public Trainee Add(Trainee newTrainee)
+        {
+            newTrainee.id = _trainees.Max(trainee => trainee.id) + 1;
+            _trainees.Add(newTrainee);
+            return newTrainee;           
+        }
+
         public IEnumerable<Trainee> GetAllTrainees()
         {
             return _trainees.OrderBy(trainee => trainee.id);        
         }
 
-        public Trainee GetForId(int id)
+        public Trainee GetTraineeForId(int id)
         {
             return _trainees.FirstOrDefault(trainee => trainee.id == id);
         }

@@ -1,19 +1,23 @@
-﻿@model IEnumerable<MVC_Cursos.Models.Trainee>
+﻿@model MVC_Cursos.ViewModels.HomeIndexViewModel
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
 </head>
 <body>
-    <h1>Trainees</h1>
+    <h1>@Model.CurrentMessage</h1>
+    <h3>Trainees</h3>
     <table>
-        @foreach (var trainees in Model)
+        @foreach (var trainee in Model.Trainees)
         {
             <tr>
-                <td>@trainees.id</td>
-                <td>@trainees.Name</td>
+                <td>@trainee.id</td>
+                <td>@trainee.Name</td>
+                <td><a asp-action="Details" asp-route-id="@trainee.id">MORE</a></td>
             </tr>
         }
     </table>
+    <a asp-action="Create" asp-controller="Home">Create</a>
+
 </body>
 </html>

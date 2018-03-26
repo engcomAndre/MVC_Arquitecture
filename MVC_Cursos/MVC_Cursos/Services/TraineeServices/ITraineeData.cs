@@ -7,6 +7,7 @@ namespace MVC_Cursos.Services
     public interface ITraineeData
     {
         IEnumerable<Trainee> GetAllTrainees();
-        Trainee GetForId(int id);
+        Trainee GetTraineeForId(int id);
+        Trainee Add(Trainee newTrainee);
     }
 }

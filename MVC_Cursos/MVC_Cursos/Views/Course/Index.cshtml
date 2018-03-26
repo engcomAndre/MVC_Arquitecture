@@ -1,19 +1,24 @@
-﻿@model IEnumerable<MVC_Cursos.Models.Course>
+﻿@model MVC_Cursos.ViewModels.CourseViewModel.CourseIndexViewModel
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
 </head>
-<body>
-    <h1>Courses</h1>
+<body>    
+    <h1>@Model.CourseCurrentMessage</h1>
+    <h2>Courses</h2>
     <table>
-        @foreach (var course in Model)
+        @foreach (var Course in Model.Courses)
         {
         <tr>
-            <td>@course.id</td>
-            <td>@course.Title</td>
+            <td>@Course.id</td>
+            <td>@Course.Title</td>
+            <td>
+                <a asp-action="Details" asp-route-id="@Course.id">MORE</a>
+            </td>
         </tr>
         }
     </table>
+    <a asp-action="Create" asp-controller="Course">Create</a>
 </body>
 </html>

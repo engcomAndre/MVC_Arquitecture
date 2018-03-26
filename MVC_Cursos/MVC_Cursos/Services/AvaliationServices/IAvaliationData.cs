@@ -9,5 +9,6 @@ namespace MVC_Cursos.Services.AvaliationServices
     public interface IAvaliationData
     {
         IEnumerable<Avaliation> GetAllAvaliations();
+        Avaliation GetAvaliationsById(int id);
     }
 }

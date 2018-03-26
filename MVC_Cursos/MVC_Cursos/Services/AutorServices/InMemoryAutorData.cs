@@ -22,9 +22,28 @@ namespace MVC_Cursos.Services.AutorServices
             };
 
         }
+
+        public Autor Add(Autor newAutor)
+        {
+            newAutor.id = _autors.Max(autor=>autor.id) + 1;
+            _autors.Add(newAutor);
+
+            return newAutor;            
+        }
+
         public IEnumerable<Autor> GetAllAutors()
         {
             return _autors.OrderBy(autor =>autor.id);
+        }
+
+        public Autor GetAutorById(int id)
+        {
+            return _autors.FirstOrDefault(autor => autor.id == id);
+        }
+
+        public Autor GetAutorByName(string autorName)
+        {
+            return _autors.FirstOrDefault(autor => autor.Name == autorName);
         }
     }
 }

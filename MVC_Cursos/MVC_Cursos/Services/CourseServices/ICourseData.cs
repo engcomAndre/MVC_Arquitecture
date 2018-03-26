@@ -9,5 +9,7 @@ namespace MVC_Cursos.Services.CourseServices
     public interface ICourseData
     {
         IEnumerable<Course> GetAllCourses();
+        Course GetCourseById(int id);
+        Course Add(Course Course);
     }
 }

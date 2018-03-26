@@ -1,21 +1,22 @@
-﻿@model IEnumerable<MVC_Cursos.Models.Avaliation>
+﻿@model MVC_Cursos.ViewModels.AvaliationViewModel.AvaliationIndexViewModel
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title></title>
+    <title>Index - Avaliations</title>
 </head>
 <body>
     <h1>Avaliations</h1>
     <table>
-        @foreach (var aval in Model)
+        @foreach (var aval in Model.Avaliations)
         {
         <tr>
             <td>@aval.id</td>
-            <td>@aval.idCourse</td>
-            <td>@aval.idTrainee</td>
+            <td>@aval.idCourse</td>            
+            <td>
+                <a asp-action="Details" asp-route-id="@aval.id">MORE</a>
+            </td>
         </tr>
         }
-
     </table>
 </body>
 </html>

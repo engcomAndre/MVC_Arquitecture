@@ -1,0 +1,22 @@
+﻿@model MVC_Cursos.Models.Avaliation
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Details - Avaliation</title>
+</head>
+<body>
+    <h1>Avaliations</h1>    
+    <table>
+        <tr>
+            <td>@Model.id</td>
+            <td>@Model.idCourse</td>
+            <td>@Model.idTrainee</td>
+            <td>@Model.score</td>
+            <td>
+                <a asp-action="Index" asp-controller="Avaliation">HOME</a>
+            </td>
+        </tr>
+
+    </table>
+</body>
+</html>

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MVC_Cursos.Models.Autor>
+﻿@model MVC_Cursos.ViewModels.AutorViewModel.AutorIndexViewModel
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -6,15 +6,19 @@
 </head>
 <body>
     <h1>Autors</h1>
+    <h2>@Model.AutorCurrentMessage</h2>
     <table>
-        @foreach (var course in Model)
+        @foreach (var autor in Model.Autors)
         {
-        <tr>
-            <td>@course.id</td>
-            <td>@course.Name</td>
-        </tr>
+            <tr>
+                <td>@autor.id</td>
+                <td>@autor.Name</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@autor.id">MORE</a>
+                </td>
+            </tr>
         }
-
     </table>
+    <a asp-action="Create" asp-controller="Autor">CREATE</a>
 </body>
 </html>

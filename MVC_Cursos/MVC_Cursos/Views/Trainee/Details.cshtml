@@ -1,6 +1,12 @@
 ﻿@model MVC_Cursos.Models.Trainee
 
-<h1>@Model.Name</h1>
-
-
-<div>Details</div>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Details</title>
+</head>
+<body>
+    <h1>@Model.id - @Model.Name</h1>
+    <h3>This is the Details for @Model.id - @Model.Name</h3>
+    <a asp-action="Index" asp-controller="Trainee">HOME</a>
+</body>
+</html>

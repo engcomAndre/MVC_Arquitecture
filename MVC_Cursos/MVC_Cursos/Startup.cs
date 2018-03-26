@@ -52,7 +52,7 @@ namespace MVC_Cursos
         private static void AddServices(IServiceCollection services)
         {
             services.AddSingleton<IGreeter, Greeter>();
-            services.AddSingleton<IAvaliationData, Services.AvaliationServices.InMemoryAvaliationData>();
+            services.AddSingleton<IAvaliationData,InMemoryAvaliationData>();
             services.AddSingleton<IAutorData, InMemoryAutorData>();
             services.AddSingleton<ITraineeData, InMemoryTraineeData>();
             services.AddSingleton<ICourseData, InMemoryCourseData>();

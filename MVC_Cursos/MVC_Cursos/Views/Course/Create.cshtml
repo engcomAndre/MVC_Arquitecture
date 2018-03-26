@@ -1,0 +1,25 @@
+﻿@model MVC_Cursos.ViewModels.CourseViewModel.CourseEditModel
+@using MVC_Cursos.Models
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Create - Course</title>
+</head>
+<body>
+    <h1>Create - Courses</h1>
+    <form method="post">
+        Title : <input asp-for="Title" placeholder="Insert a Course's title" />
+        Tecnology: <select asp-for="Tecnology" asp-items="@Html.GetEnumSelectList<TecnologyType>()"></select>
+        Autor:<select>
+            @foreach (var autor in Model.Autors)
+            {
+                  <option value="@autor.Name">@autor.Name</option>
+            }
+        </select>
+
+        <input type="submit" name="save" value="Save" />
+    </form>
+</body>
+</html>

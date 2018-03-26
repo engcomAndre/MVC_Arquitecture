@@ -1,0 +1,20 @@
+﻿@model MVC_Cursos.Models.Trainee
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>@Model.Name</h1>
+    <table>
+        <tr>
+            <td>@Model.id</td>
+            <td>@Model.Name</td>
+            <td>
+                <a asp-action="Index" asp-controller="Home">HOME</a>
+            </td>
+        </tr>
+
+    </table>
+</body>
+</html>
