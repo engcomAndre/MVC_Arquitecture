@@ -25,7 +25,10 @@ namespace MVC_Cursos.Controllers
 
         public IActionResult Details(int id)
         {
-            var model = _courseData.GetCourseById(id);
+            var Course = _courseData.GetCourseById(id);
+            var model = new CourseDetailsModel();
+            model.Course = _courseData.GetCourseById(id);
+            model.AutorName = _autorData.GetAutorById(model.Course.idAutor).Name;
 
             if(model == null)
             {
@@ -51,9 +54,6 @@ namespace MVC_Cursos.Controllers
             newCourse.Title = model.Title;
             newCourse.TecnologyCourse = model.Tecnology;
             newCourse.idAutor = _autorData.GetAutorByName(model.AutorName).id;            
-
-            
-
             newCourse = _courseData.Add(newCourse);
 
             return View(nameof(Details),newCourse);

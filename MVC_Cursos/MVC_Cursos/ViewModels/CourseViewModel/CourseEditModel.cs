@@ -1,6 +1,7 @@
 ﻿using MVC_Cursos.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace MVC_Cursos.ViewModels.CourseViewModel
 {

@@ -1,20 +1,16 @@
-﻿@model MVC_Cursos.Models.Course
+﻿@model MVC_Cursos.ViewModels.CourseViewModel.CourseDetailsModel
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title></title>
+    <title>Details - Course</title>
 </head>
 <body>
-    <h1>@Model.Title</h1>
-    <table>
-        <tr>
-            <td>@Model.id</td>
-            <td>@Model.Title</td>
-            <td>
-                <a asp-action="Index" asp-controller="Course">HOME</a>
-            </td>
-        </tr>
-
-    </table>
+    <h1>Course Id: @Model.id - Title: @Model.Title</h1>
+    <div>Autor Id: @Model.idAutor</div>
+    <div>Course Tecnology: @Model.TecnologyCourse</div>
+    <div>
+        <a asp-action="Index" asp-controller="Course">HOME</a>
+    </div>
 </body>
 </html>
